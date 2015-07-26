@@ -1,0 +1,8 @@
+#!/bin/bash
+
+BASEDIR=$(dirname $0);
+
+export HADOOP_CLASSPATH=$BASEDIR/*:$BASEDIR/../tez/*:$BASEDIR/../tez/lib/*:$BASEDIR/../tez/conf/:$HADOOP_CLASSPATH;
+export HADOOP_USER_CLASSPATH_FIRST=true;
+
+yarn "$@"
